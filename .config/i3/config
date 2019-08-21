@@ -1,0 +1,252 @@
+####################################################################
+########################     ###########   ##########         ######
+########################## ##########       ###########     ########
+#########################  ###########    ##############  ##########
+####################################################################
+#  I3 Configuration
+
+set $mod Mod4
+set $browser google-chrome-stable
+set $terminal urxvt
+
+
+###########/---------------------\ #################
+############| Startup Executions |##################
+############|____________________|##################
+
+# Xfce4 power manager
+exec_always --no-startup-id xfce4-power-manager
+
+# Nitrogen restore
+exec --no-startup-id nitrogen --restore
+
+# Disable window titlebars
+for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] floating disable
+
+
+# NetworkManager nm-applet
+exec --no-startup-id nm-applet
+
+#  Keyboard layout binding
+exec --no-startup-id "setxkbmap us,gr -option 'grp:lalt_lshift_toggle'"
+exec --no-startup-id "gxkb"
+
+# Font
+font pango:Roboto 11
+
+
+exec --no-starup-id ~/home/nikr/.conky/startup.sh
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+
+
+
+
+
+##############``````````````###################
+################ PulseAudio ################
+##############`````````````###################
+
+exec --no-startup-id start-pulseaudio-x11
+#exec --no-startup-id pa-applet
+
+bindsym $mod+Ctrl+m exec pavucontrol
+
+bindsym $mod+KP_Add exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym $mod+KP_Subtract exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+
+
+#   #   #                   #  #   #
+#   # #  #    Misc Binding    #   #
+#   $%  #                    @-> #
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Brightness adjustment with light
+bindsym $mod+Ctrl+KP_Add exec light -A 5
+bindsym $mod+Ctrl+KP_Subtract exec light -U 5
+
+# Browser
+bindsym $mod+F2 exec $browser
+
+# Terminal
+bindsym $mod+Return exec $terminal
+
+# Thunar FileManager
+bindsym $mod+Shift+d exec thunar
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# Rofi program launcher
+bindsym $mod+d exec rofi -show run
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+
+
+
+
+
+#$$^^^^
+#******  Workspace
+#$$!!!!
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+
+
+#-#-#-##----
+#---------- Resize window
+
+mode "resize" {
+
+        # Resizing with arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+
+#!+++++++
+#....@;d'w   Colors
+
+# Color variables
+set $bg-color 	         #000000
+set $inactive-bg-color   #000000
+set $text-color          #D1D1D1
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+#
+# --------- Window Colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+
+
+
+#~~~~~~~~~~~
+#~~~~~~~~~  Window/Container
+#~!~!!~!
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# change focus using the arrow keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window using the cursor keys:
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+
+
+#????
+#??$%#    Container   !@@#@$!
+#             @!#!##
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+# Screen layout
+#exec-always xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
