@@ -10,12 +10,34 @@ set $browser google-chrome-stable
 set $terminal urxvt
 
 
+#!+++++++
+#....@;d'w   Colors
+
+# Color variables
+set $bg-color 	         #000000
+set $inactive-bg-color   #000000
+set $text-color          #D1D1D1
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+#
+# --------- Window Colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
+####^^^^^^^^^####^^^^^^^^^####
+
+
+
 ###########/---------------------\ #################
 ############| Startup Executions |##################
 ############|____________________|##################
 
 # Xfce4 power manager
-exec_always --no-startup-id xfce4-power-manager
+#exec_always --no-startup-id xfce4-power-manager
 
 # Nitrogen restore
 exec --no-startup-id nitrogen --restore
@@ -23,7 +45,6 @@ exec --no-startup-id nitrogen --restore
 # Disable window titlebars
 for_window [class="^.*"] border pixel 1
 for_window [class="^.*"] floating disable
-
 
 # NetworkManager nm-applet
 exec --no-startup-id nm-applet
@@ -33,10 +54,8 @@ exec --no-startup-id "setxkbmap us,gr -option 'grp:lalt_lshift_toggle'"
 exec --no-startup-id "gxkb"
 
 # Font
-font pango:Roboto 11
+font pango:monospace 11
 
-
-exec --no-starup-id ~/home/nikr/.conky/startup.sh
 
 ####^^^^^^^^^####^^^^^^^^^####
 
@@ -161,25 +180,6 @@ bindsym $mod+r mode "resize"
 
 
 
-#!+++++++
-#....@;d'w   Colors
-
-# Color variables
-set $bg-color 	         #000000
-set $inactive-bg-color   #000000
-set $text-color          #D1D1D1
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
-#
-# --------- Window Colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-
-####^^^^^^^^^####^^^^^^^^^####
 
 
 
@@ -238,11 +238,14 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+
+gaps inner 0
+gaps outer 0
+smart_gaps on
+
+
 ####^^^^^^^^^####^^^^^^^^^####
 
-
-# Screen layout
-#exec-always xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
