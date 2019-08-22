@@ -43,7 +43,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 exec --no-startup-id nitrogen --restore
 
 # Disable window titlebars
-#for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 1
 for_window [class="^.*"] floating disable
 
 # NetworkManager nm-applet
