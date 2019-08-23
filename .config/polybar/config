@@ -59,7 +59,7 @@ font-3 = Font Awesome 5 Brands:pixelsize=10;0
 ; Enable modules in bar blocks
 modules-left = i3
 modules-center =  date
-modules-right =  xkeyboard pulseaudio battery eth updates-arch-combined
+modules-right =  xkeyboard pulseaudio battery eth 
 
 ;#!!#!#!#
 ;#!!#!#!# System tray
