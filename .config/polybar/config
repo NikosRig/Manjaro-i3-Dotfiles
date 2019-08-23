@@ -15,7 +15,7 @@ background-alt = #444
 foreground = #C1C1C1
 foreground-alt = #555
 primary = #ffb52a
-secondary = #a22335
+secondary = #bd2c40
 alert = #bd2c40
 
 ;===========================
@@ -59,7 +59,7 @@ font-3 = Font Awesome 5 Brands:pixelsize=10;0
 ; Enable modules in bar blocks
 modules-left = i3
 modules-center =  date
-modules-right =  xkeyboard pulseaudio battery eth
+modules-right =  xkeyboard pulseaudio battery eth updates-arch-combined
 
 ;#!!#!#!#
 ;#!!#!#!# System tray
@@ -113,6 +113,11 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
+
+[module/updates-arch-combined]
+type = custom/script
+exec = ~/.config/polybar/updates-arch-combined.sh
+interval = 600
 
 
 [module/eth]
