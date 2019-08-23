@@ -14,10 +14,10 @@ set $terminal urxvt
 #....@;d'w   Colors
 
 # Color variables
-set $bg-color 	         #2c1747
+set $bg-color 	         #231238
 set $inactive-bg-color   #1A0D2A
-set $text-color          #FFFFFF
-set $inactive-text-color #FFFFFF
+set $text-color          #F1F1F1
+set $inactive-text-color #D1D1D1
 set $urgent-bg-color     #E53935
 
 #
@@ -36,7 +36,6 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 ############| Startup Executions |##################
 ############|____________________|##################
 
-#exec conky -c $HOME/.config/conky/sidepanes/sidepanes.conkyrc
 
 # Xfce4 power manager
 #exec_always --no-startup-id xfce4-power-manager
@@ -46,7 +45,7 @@ exec --no-startup-id nitrogen --restore
 
 # Disable window titlebars
 for_window [class="^.*"] border pixel 1
-for_window [class="^.*"] floating disable
+#for_window [class="^.*"] floating disable
 
 # NetworkManager nm-applet
 exec --no-startup-id nm-applet
@@ -56,7 +55,7 @@ exec --no-startup-id "setxkbmap us,gr -option 'grp:lalt_lshift_toggle'"
 exec --no-startup-id "gxkb"
 
 # Font
-font pango:Roboto 10
+font pango:Ubuntu 10
 
 
 # Window title alignment
