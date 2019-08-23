@@ -36,6 +36,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 ############| Startup Executions |##################
 ############|____________________|##################
 
+#exec conky -c $HOME/.config/conky/sidepanes/sidepanes.conkyrc
+
 # Xfce4 power manager
 #exec_always --no-startup-id xfce4-power-manager
 
@@ -54,11 +56,11 @@ exec --no-startup-id "setxkbmap us,gr -option 'grp:lalt_lshift_toggle'"
 exec --no-startup-id "gxkb"
 
 # Font
-font pango:Roboto 11
+font pango:Roboto 10
 
 
 # Window title alignment
-title_align left
+title_align center
 
 
 ####^^^^^^^^^####^^^^^^^^^####
@@ -118,6 +120,9 @@ bindsym $mod+Shift+q kill
 
 # Rofi program launcher
 bindsym $mod+d exec rofi -show run
+
+# Prntscreen screenshooter
+bindsym Print exec xfce4-screenshooter
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -204,6 +209,7 @@ bindsym $mod+Right focus right
 
 # move focused window using the cursor keys:
 bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
