@@ -2,7 +2,7 @@
 > Configuration files for styling i3 environment.
 
 #### My configuration files for i3, rofi, urxvt, polybar
-![](preview.png)
+![](previewimg.png)
 
 ## Prerequisites
 
