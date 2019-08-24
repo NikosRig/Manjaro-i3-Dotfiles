@@ -17,11 +17,11 @@ Xft.rgba: rgb
 
 ! red
 *.color1:   #E06C75
-*.color9:   #EC5F67
+*.color9:   #E06C75
 
 ! green
 *.color2:   #99C794
-*.color10:  #C594C5
+*.color10:  #00ad4a
 
 ! yellow
 *.color3:   #FAC863
@@ -32,8 +32,8 @@ Xft.rgba: rgb
 *.color12:  #6699CC
 
 ! magenta
-*.color5:  #C594C5
-*.color13:  #C594C5
+*.color5:  #00ad4a
+*.color13:  #00ad4a
 
 ! cyan
 *.color6:  #3ea0a0
