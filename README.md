@@ -23,7 +23,7 @@ Linux:
 ```
 Copy the project files to your $HOME directory.
  
-chmod +x ~/.config/polybar/chmod +x ~/.config/polybar/launch.sh
+chmod +x ~/.config/polybar/launch.sh
  
 Reboot or reload your system.
 ```
