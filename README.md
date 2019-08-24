@@ -9,11 +9,13 @@
 * [Polybar](https://github.com/polybar/polybar)
 * [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/)
 * [Pavucontrol](https://github.com/pulseaudio/pavucontrol)
-* [Uxrvt](https://github.com/exg/rxvt-unicode)
+* [Light](https://github.com/haikarainen/light)
 
 * Optional
+
+    - [Uxrvt](https://github.com/exg/rxvt-unicode)
     - [Thunar](https://github.com/xfce-mirror/thunar)
-    - [Light](https://github.com/haikarainen/light)
+
 
 
 ## Installation
