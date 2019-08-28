@@ -1,0 +1,14 @@
+firefox
+lxappearance
+lxinput
+pavucontrol
+polybar
+pulseaudio
+pulseaudio-alsa
+pulseeffects
+pulsemixer
+rofi
+thunar
+xfce4-power-manager
+xfce4-screenshooter
+light
