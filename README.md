@@ -16,6 +16,10 @@
     - [Uxrvt](https://github.com/exg/rxvt-unicode)
     - [Thunar](https://github.com/xfce-mirror/thunar)
 
+### You can import and install dependencies via pacman
+```
+pacman -S --needed - < pkglist.txt  
+```
 
 
 ## Installation
