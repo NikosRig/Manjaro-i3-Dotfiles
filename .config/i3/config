@@ -37,20 +37,18 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 ############|____________________|##################
 
 # autostart redshift
-#exec --no-startup-id redshift-gtk
-
+exec --no-startup-id redshift-gtk
 
 # Xfce4 power manager
-#exec_always --no-startup-id xfce4-power-manager
+exec_always --no-startup-id xfce4-power-manager
 
 # Nitrogen restore
 exec --no-startup-id nitrogen --restore
 
 # Disable window titlebars
 for_window [class="^.*"] border pixel 1
-#for_window [class="^.*"] floating disable
+for_window [class="(?i)thunar"] floating disable
 
-# NetworkManager nm-applet
 exec --no-startup-id nm-applet
 
 #  Keyboard layout binding
